@@ -1,0 +1,43 @@
+site_name: AIGuide - AI Agent 学习指南
+site_description: AI Agent 开发者的系统化学习指南
+site_url: https://bugcodes.github.io/AIGuide
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - OpenClaw: openclaw/
+  - LangChain: langchain/
+  - Hermes: hermes/
+  - Agent Interview: agent-interview/
+  - Multi-Agent: multi-agent/
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+plugins:
+  - search

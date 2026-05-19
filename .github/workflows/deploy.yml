@@ -1,0 +1,192 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs-material
+
+      - name: Create mkdocs.yml
+        run: |
+          cat > mkdocs.yml << 'EOF'
+          site_name: AIGuide - AI Agent 学习指南
+          site_description: AI Agent 开发者的系统化学习指南
+          site_url: https://bugcodes.github.io/AIGuide/
+          theme:
+            name: material
+            palette:
+              - scheme: default
+                primary: indigo
+                accent: blue
+                toggle:
+                  icon: material/brightness-7
+                  name: Switch to dark mode
+              - scheme: slate
+                primary: indigo
+                accent: blue
+                toggle:
+                  icon: material/brightness-4
+                  name: Switch to light mode
+            features:
+              - navigation.instant
+              - navigation.tracking
+              - navigation.sections
+              - navigation.expand
+              - content.code.copy
+          nav:
+            - Home: index.md
+            - OpenClaw:
+              - openclaw/index.md
+              - openclaw/01-Architecture/L01.md
+              - openclaw/01-Architecture/L02.md
+              - openclaw/02-AgentLoop/L03.md
+              - openclaw/02-AgentLoop/L04.md
+              - openclaw/02-AgentLoop/L05.md
+              - openclaw/02-AgentLoop/L06.md
+              - openclaw/02-AgentLoop/L07.md
+              - openclaw/03-Memory/L08.md
+              - openclaw/03-Memory/L09.md
+              - openclaw/03-Memory/L10.md
+              - openclaw/03-Memory/L11.md
+              - openclaw/04-Routing/L12.md
+              - openclaw/04-Routing/L13.md
+              - openclaw/04-Routing/L14.md
+              - openclaw/04-Routing/L15.md
+              - openclaw/04-Routing/L16.md
+              - openclaw/04-Routing/L17.md
+              - openclaw/04-Routing/L18.md
+              - openclaw/04-Routing/L19.md
+              - openclaw/05-Plugins/L20.md
+              - openclaw/05-Plugins/L21.md
+              - openclaw/05-Plugins/L22.md
+              - openclaw/05-Plugins/L23.md
+              - openclaw/06-Security/L24.md
+              - openclaw/06-Security/L25.md
+              - openclaw/06-Security/L26.md
+              - openclaw/06-Security/L27.md
+              - openclaw/06-Security/L33.md
+              - openclaw/06-Security/L34.md
+              - openclaw/06-Security/L35.md
+              - openclaw/06-Security/L36.md
+              - openclaw/Labs/L28.md
+              - openclaw/Labs/L29.md
+              - openclaw/Labs/L30.md
+              - openclaw/Labs/L31.md
+              - openclaw/Labs/L32.md
+            - LangChain: langchain/index.md
+            - Hermes: hermes/index.md
+            - Agent Interview: agent-interview/index.md
+            - Multi-Agent: multi-agent/index.md
+          markdown_extensions:
+            - pymdownx.highlight:
+                anchor_linenums: true
+            - pymdownx.inlinehilite
+            - pymdownx.snippets
+            - pymdownx.superfences
+          plugins:
+            - search
+          EOF
+
+      - name: Create index page
+        run: |
+          cat > docs/index.md << 'EOF'
+          # 🤖 AIGuide - AI Agent 学习指南
+
+          > **AI Agent 开发者的系统化学习指南**  
+          > 从入门到精通，对标 JavaGuide 的 AI 学习生态
+
+          ---
+
+          ## 📚 课程列表
+
+          ### 🤖 框架与工具
+
+          | 课程 | 描述 | 进度 |
+          |------|------|------|
+          | [OpenClaw 核心原理与实战](./openclaw/) | OpenClaw 架构、Agent Loop、Memory、插件生态、安全实战 | 🟢 进行中 |
+          | [LangChain 实战教程](./langchain/) | LangChain 核心概念、RAG、Agent、Chain | 🔜 待开始 |
+          | [Hermes Agent 框架](./hermes/) | Hermes 框架深度解析、Multi-Agent 协作 | 🔜 待开始 |
+          | [Multi-Agent 协作原理](./multi-agent/) | 多智能体系统设计、协作模式、任务分解 | 🔜 待开始 |
+
+          ### 🎯 求职与面试
+
+          | 课程 | 描述 | 进度 |
+          |------|------|------|
+          | [AI Agent 面试题库](./agent-interview/) | 1000+ 题、算法题、系统设计、简历优化 | 🔜 待开始 |
+
+          ---
+
+          ## 🚀 快速开始
+
+          ```bash
+          # Clone 本仓库
+          git clone https://github.com/bugcodes/AIGuide.git
+
+          # 进入 OpenClaw 课程
+          cd AIGuide/openclaw
+
+          # 阅读课程大纲
+          cat README.md
+          ```
+
+          ---
+
+          ## 🤝 贡献指南
+
+          欢迎贡献！请阅读 [贡献指南](./docs/CONTRIBUTING.md)。
+
+          ---
+
+          *最后更新：2026-05-19*  
+          *欢迎 ⭐ Star + Fork，一起构建 AI 学习生态！*
+          EOF
+
+      - name: Create mkdocs.yml with proper site_url
+        run: |
+          # Update site_url to not use trailing slash
+          sed -i 's|https://bugcodes.github.io/AIGuide/||' mkdocs.yml
+
+      - name: Build site
+        run: mkdocs build
+        env:
+          MKDOCS_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
