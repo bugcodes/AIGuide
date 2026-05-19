@@ -26,11 +26,47 @@ theme:
 
 nav:
   - Home: index.md
-  - OpenClaw: openclaw/
-  - LangChain: langchain/
-  - Hermes: hermes/
-  - Agent Interview: agent-interview/
-  - Multi-Agent: multi-agent/
+  - OpenClaw:
+    - openclaw/README.md
+    - 架构:
+      - openclaw/01-Architecture/L01.md
+      - openclaw/01-Architecture/L02.md
+    - Agent Loop:
+      - openclaw/02-AgentLoop/L03.md
+      - openclaw/02-AgentLoop/L04.md
+      - openclaw/02-AgentLoop/L05.md
+      - openclaw/02-AgentLoop/L06.md
+      - openclaw/02-AgentLoop/L07.md
+    - Memory:
+      - openclaw/03-Memory/L08.md
+      - openclaw/03-Memory/L09.md
+      - openclaw/03-Memory/L10.md
+      - openclaw/03-Memory/L11.md
+    - 路由与协作:
+      - openclaw/04-Routing/L12.md
+      - openclaw/04-Routing/L13.md
+      - openclaw/04-Routing/L14.md
+      - openclaw/04-Routing/L15.md
+    - 插件生态:
+      - openclaw/05-Plugins/L20.md
+      - openclaw/05-Plugins/L21.md
+      - openclaw/05-Plugins/L22.md
+      - openclaw/05-Plugins/L23.md
+    - 安全与高可用:
+      - openclaw/06-Security/L24.md
+      - openclaw/06-Security/L25.md
+      - openclaw/06-Security/L26.md
+      - openclaw/06-Security/L27.md
+    - 演练场:
+      - openclaw/Labs/L28.md
+      - openclaw/Labs/L29.md
+      - openclaw/Labs/L30.md
+      - openclaw/Labs/L31.md
+      - openclaw/Labs/L32.md
+  - LangChain: langchain/README.md
+  - Hermes: hermes/README.md
+  - Agent Interview: agent-interview/README.md
+  - Multi-Agent: multi-agent/README.md
 
 markdown_extensions:
   - pymdownx.highlight:
