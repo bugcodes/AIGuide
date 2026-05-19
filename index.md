@@ -12,6 +12,7 @@
 | 课程 | 描述 | 进度 |
 |------|------|------|
 | [OpenClaw 核心原理与实战](./openclaw/) | OpenClaw 架构、Agent Loop、Memory、插件生态、安全实战 | 🟢 进行中 |
+| [Claude Code 工程化实战](./claude-code/) | Claude Code 底层原理、Multi-Agent、上下文管理、工程化实战 | 🟢 进行中 |
 | [LangChain 实战教程](./langchain/) | LangChain 核心概念、RAG、Agent、Chain | 🔜 待开始 |
 | [Hermes Agent 框架](./hermes/) | Hermes 框架深度解析、Multi-Agent 协作 | 🔜 待开始 |
 | [Multi-Agent 协作原理](./multi-agent/) | 多智能体系统设计、协作模式、任务分解 | 🔜 待开始 |

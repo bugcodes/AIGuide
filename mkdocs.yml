@@ -63,6 +63,38 @@ nav:
       - openclaw/Labs/L30.md
       - openclaw/Labs/L31.md
       - openclaw/Labs/L32.md
+  - Claude Code:
+    - claude-code/README.md
+    - 开篇:
+      - claude-code/01-开篇-共生而非替代.md
+      - claude-code/02-开篇-1小时解锁高级用法.md
+    - 基础理论:
+      - claude-code/03-基础-登台望远.md
+      - claude-code/04-基础-过目不忘.md
+      - claude-code/05-基础-分而治之.md
+      - claude-code/06-基础-两体裁衣.md
+      - claude-code/07-基础-明察秋毫.md
+      - claude-code/08-基础-去芜存精.md
+      - claude-code/09-基础-百舸争流.md
+      - claude-code/10-基础-群策群力.md
+    - 核心技能:
+      - claude-code/11-技能-触类旁通.md
+      - claude-code/12-技能-另辟蹊径.md
+      - claude-code/13-技能-集腋成裘.md
+      - claude-code/14-技能-千车之鉴.md
+      - claude-code/15-技能-横看成岭.md
+      - claude-code/16-技能-顺藤摸瓜.md
+      - claude-code/17-技能-鉴往知来.md
+      - claude-code/18-技能-薪火相传.md
+    - 工程实践:
+      - claude-code/19-实践-海纳百川.md
+      - claude-code/20-实践-抛砖引玉.md
+      - claude-code/21-实践-无人之手.md
+      - claude-code/22-实践-游刃可寻.md
+      - claude-code/23-实践-登堂入室.md
+      - claude-code/24-实践-得心应手.md
+      - claude-code/25-实践-画龙点睛.md
+      - claude-code/26-实践-未来已来.md
   - LangChain: langchain/README.md
   - Hermes: hermes/README.md
   - Agent Interview: agent-interview/README.md
