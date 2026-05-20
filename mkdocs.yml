@@ -27,7 +27,7 @@ theme:
 nav:
   - Home: index.md
   - OpenClaw:
-    - openclaw/README.md
+    - openclaw/index.md
     - 架构:
       - openclaw/01-Architecture/L01.md
       - openclaw/01-Architecture/L02.md
@@ -95,10 +95,11 @@ nav:
       - claude-code/24-实践-得心应手.md
       - claude-code/25-实践-画龙点睛.md
       - claude-code/26-实践-未来已来.md
-  - LangChain: langchain/README.md
-  - Hermes: hermes/README.md
-  - Agent Interview: agent-interview/README.md
-  - Multi-Agent: multi-agent/README.md
+  # LangChain、Agent Interview、Multi-Agent 等目录暂不存在，先注释掉
+  # - LangChain: langchain/README.md
+  # - Hermes: hermes/README.md
+  # - Agent Interview: agent-interview/README.md
+  # - Multi-Agent: multi-agent/README.md
 
 markdown_extensions:
   - pymdownx.highlight:
