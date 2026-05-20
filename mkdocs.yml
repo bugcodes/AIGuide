@@ -28,9 +28,88 @@ theme:
     - content.code.copy
 
 nav:
+  # 顶部 Tab 栏 - 只放系列入口
   - 首页: index.md
   - 🤖 OpenClaw: openclaw/index.md
   - 💻 Claude Code: claude-code/README.md
+  # 侧边栏 - 各系列完整课程目录（MkDocs Material 会自动识别并渲染为侧边栏 section）
+  - OpenClaw:
+    - openclaw/index.md
+    - 架构:
+      - openclaw/01-Architecture/L01.md
+      - openclaw/01-Architecture/L02.md
+    - Agent Loop:
+      - openclaw/02-AgentLoop/L03.md
+      - openclaw/02-AgentLoop/L04.md
+      - openclaw/02-AgentLoop/L05.md
+      - openclaw/02-AgentLoop/L06.md
+      - openclaw/02-AgentLoop/L07.md
+    - Memory:
+      - openclaw/03-Memory/L08.md
+      - openclaw/03-Memory/L09.md
+      - openclaw/03-Memory/L10.md
+      - openclaw/03-Memory/L11.md
+    - 路由与协作:
+      - openclaw/04-Routing/L12.md
+      - openclaw/04-Routing/L13.md
+      - openclaw/04-Routing/L14.md
+      - openclaw/04-Routing/L15.md
+      - openclaw/04-Routing/L16.md
+      - openclaw/04-Routing/L17.md
+      - openclaw/04-Routing/L18.md
+      - openclaw/04-Routing/L19.md
+    - 插件生态:
+      - openclaw/05-Plugins/L20.md
+      - openclaw/05-Plugins/L21.md
+      - openclaw/05-Plugins/L22.md
+      - openclaw/05-Plugins/L23.md
+    - 安全与高可用:
+      - openclaw/06-Security/L24.md
+      - openclaw/06-Security/L25.md
+      - openclaw/06-Security/L26.md
+      - openclaw/06-Security/L27.md
+      - openclaw/06-Security/L33.md
+      - openclaw/06-Security/L34.md
+      - openclaw/06-Security/L35.md
+      - openclaw/06-Security/L36.md
+    - 演练场:
+      - openclaw/Labs/L28.md
+      - openclaw/Labs/L29.md
+      - openclaw/Labs/L30.md
+      - openclaw/Labs/L31.md
+      - openclaw/Labs/L32.md
+  - Claude Code:
+    - claude-code/README.md
+    - 开篇:
+      - claude-code/01-开篇-共生而非替代.md
+      - claude-code/02-开篇-1小时解锁高级用法.md
+    - 基础理论:
+      - claude-code/03-基础-登台望远.md
+      - claude-code/04-基础-过目不忘.md
+      - claude-code/05-基础-分而治之.md
+      - claude-code/06-基础-两体裁衣.md
+      - claude-code/07-基础-明察秋毫.md
+      - claude-code/08-基础-去芜存精.md
+      - claude-code/09-基础-百舸争流.md
+      - claude-code/10-基础-群策群力.md
+    - 核心技能:
+      - claude-code/11-技能-触类旁通.md
+      - claude-code/12-技能-另辟蹊径.md
+      - claude-code/13-技能-集腋成裘.md
+      - claude-code/14-技能-千车之鉴.md
+      - claude-code/15-技能-横看成岭.md
+      - claude-code/16-技能-顺藤摸瓜.md
+      - claude-code/17-技能-鉴往知来.md
+      - claude-code/18-技能-薪火相传.md
+    - 工程实践:
+      - claude-code/19-实践-海纳百川.md
+      - claude-code/20-实践-抛砖引玉.md
+      - claude-code/21-实践-无人之手.md
+      - claude-code/22-实践-游刃可寻.md
+      - claude-code/23-实践-登堂入室.md
+      - claude-code/24-实践-得心应手.md
+      - claude-code/25-实践-画龙点睛.md
+      - claude-code/26-实践-未来已来.md
 
 markdown_extensions:
   - pymdownx.highlight:
