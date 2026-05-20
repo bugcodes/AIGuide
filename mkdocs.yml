@@ -20,13 +20,23 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs_sticky
     - navigation.sections
     - navigation.expand
+    - navigation.top
     - content.code.copy
 
 nav:
-  - Home: index.md
-  - OpenClaw:
+  - 🏠 首页: index.md
+  - 🤖 OpenClaw: openclaw/index.md
+  - 💻 Claude Code: claude-code/README.md
+  # LangChain、Agent Interview、Multi-Agent 等目录暂不存在，先注释掉
+  # - 🔗 LangChain: langchain/README.md
+  # - 🧠 Hermes: hermes/README.md
+  # - 🎯 Agent Interview: agent-interview/README.md
+  # - 🔀 Multi-Agent: multi-agent/README.md
+  - OpenClaw 完整导航:
     - openclaw/index.md
     - 架构:
       - openclaw/01-Architecture/L01.md
@@ -47,6 +57,10 @@ nav:
       - openclaw/04-Routing/L13.md
       - openclaw/04-Routing/L14.md
       - openclaw/04-Routing/L15.md
+      - openclaw/04-Routing/L16.md
+      - openclaw/04-Routing/L17.md
+      - openclaw/04-Routing/L18.md
+      - openclaw/04-Routing/L19.md
     - 插件生态:
       - openclaw/05-Plugins/L20.md
       - openclaw/05-Plugins/L21.md
@@ -57,13 +71,17 @@ nav:
       - openclaw/06-Security/L25.md
       - openclaw/06-Security/L26.md
       - openclaw/06-Security/L27.md
+      - openclaw/06-Security/L33.md
+      - openclaw/06-Security/L34.md
+      - openclaw/06-Security/L35.md
+      - openclaw/06-Security/L36.md
     - 演练场:
       - openclaw/Labs/L28.md
       - openclaw/Labs/L29.md
       - openclaw/Labs/L30.md
       - openclaw/Labs/L31.md
       - openclaw/Labs/L32.md
-  - Claude Code:
+  - Claude Code 完整导航:
     - claude-code/README.md
     - 开篇:
       - claude-code/01-开篇-共生而非替代.md
@@ -95,11 +113,6 @@ nav:
       - claude-code/24-实践-得心应手.md
       - claude-code/25-实践-画龙点睛.md
       - claude-code/26-实践-未来已来.md
-  # LangChain、Agent Interview、Multi-Agent 等目录暂不存在，先注释掉
-  # - LangChain: langchain/README.md
-  # - Hermes: hermes/README.md
-  # - Agent Interview: agent-interview/README.md
-  # - Multi-Agent: multi-agent/README.md
 
 markdown_extensions:
   - pymdownx.highlight:
